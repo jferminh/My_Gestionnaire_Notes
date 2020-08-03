@@ -7,11 +7,13 @@ import androidx.room.RoomDatabase
 import com.example.mygestionnairenotes.data.model.StudentEntity
 import com.example.mygestionnairenotes.data.model.TeacherEntity
 import com.example.mygestionnairenotes.domain.IStudentDao
+import com.example.mygestionnairenotes.domain.ITeacherDao
 
 @Database(entities = arrayOf(StudentEntity::class, TeacherEntity::class), version = 1)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun studentDao(): IStudentDao
+    abstract fun teacherDao(): ITeacherDao
 
     companion object {
         private var INSTANCE: AppDatabase? = null

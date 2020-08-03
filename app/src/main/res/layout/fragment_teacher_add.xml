@@ -4,11 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.student.StudentAddFragment">
-
+    tools:context=".ui.teacher.TeacherAddFragment">
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/ext_save_fab"
+        android:id="@+id/ext_save_fab_teacher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -28,23 +27,23 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/img_student"
+                android:id="@+id/img_teacherAdd"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/ic_boy"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_number"
+                android:id="@+id/txt_numberTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 android:layout_marginTop="8dp"
-                android:hint="Numéro d'étudiant:"
+                android:hint="Numéro d'ensaignant:"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/colorPrimaryDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_number"
+                    android:id="@+id/text_numberTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number" />
@@ -52,7 +51,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_lastname"
+                android:id="@+id/txt_lastNameTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -61,7 +60,7 @@
                 app:endIconTint="@color/colorPrimaryDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_nom"
+                    android:id="@+id/text_nomTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName" />
@@ -69,7 +68,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_firstname"
+                android:id="@+id/txt_firstNameTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -78,14 +77,14 @@
                 app:endIconTint="@color/colorPrimaryDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_prenom"
+                    android:id="@+id/text_prenomTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPersonName|text|textCapWords" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_phone"
+                android:id="@+id/txt_phoneTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -94,7 +93,7 @@
                 app:endIconTint="@color/colorPrimaryDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_telephone"
+                    android:id="@+id/text_telephoneTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="phone" />
@@ -102,7 +101,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_address"
+                android:id="@+id/txt_addressTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -111,7 +110,7 @@
                 app:endIconTint="@color/colorPrimaryDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_adresse"
+                    android:id="@+id/text_adresseTeacher"
                     android:layout_width="match_parent"
 
                     android:layout_height="wrap_content"
@@ -120,7 +119,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_city"
+                android:id="@+id/txt_cityTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -129,7 +128,7 @@
                 app:endIconTint="@color/colorPrimaryDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_commune"
+                    android:id="@+id/text_communeTeacher"
                     android:layout_width="match_parent"
 
                     android:layout_height="wrap_content"
@@ -138,7 +137,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_zip"
+                android:id="@+id/txt_zipTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -148,7 +147,7 @@
                 app:endIconTint="@color/colorPrimaryDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_codigoPostal"
+                    android:id="@+id/text_codigoPostalTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number|phone" />
@@ -156,7 +155,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/txt_email"
+                android:id="@+id/txt_emailTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -166,7 +165,7 @@
                 app:endIconTint="@color/colorPrimaryDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/text_email"
+                    android:id="@+id/text_emailTeacher"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress" />
@@ -176,14 +175,6 @@
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
-<!--    <com.google.android.material.bottomappbar.BottomAppBar-->
-<!--        android:id="@+id/bottomAppBar"-->
-<!--        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="bottom"-->
-<!--        app:menu="@menu/bottom_app_bar" />-->
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

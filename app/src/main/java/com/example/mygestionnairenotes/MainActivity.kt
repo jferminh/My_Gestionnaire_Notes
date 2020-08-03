@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when(destination.id){
-                R.id.studentDetailFragment, R.id.studentAddFragment -> mainViewModel.hideBottomNav()
+                R.id.studentDetailFragment, R.id.studentAddFragment, R.id.teacherAddFragment, R.id.teacherDetailFragment -> mainViewModel.hideBottomNav()
 //                R.id.studentAddFragment -> mainViewModel.hideBottomNav()
                 else -> mainViewModel.showBottomNav()
             }

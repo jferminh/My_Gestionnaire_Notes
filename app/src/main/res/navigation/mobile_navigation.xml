@@ -28,15 +28,55 @@
         android:id="@+id/navigation_enseignant"
         android:name="com.example.mygestionnairenotes.ui.teacher.TeacherFragment"
         android:label="@string/title_enseignant"
-        tools:layout="@layout/fragment_teacher" />
+        tools:layout="@layout/fragment_teacher" >
+        <action
+            android:id="@+id/action_navigation_enseignant_to_teacherDetailFragment"
+            app:destination="@id/teacherDetailFragment" />
+        <action
+            android:id="@+id/action_navigation_enseignant_to_teacherAddFragment"
+            app:destination="@id/teacherAddFragment" />
+    </fragment>
     <fragment
         android:id="@+id/studentAddFragment"
         android:name="com.example.mygestionnairenotes.ui.student.StudentAddFragment"
         android:label="Nouvel Etudiant"
-        tools:layout="@layout/fragment_student_add" />
+        tools:layout="@layout/fragment_student_add" >
+        <action
+            android:id="@+id/action_studentAddFragment_to_navigation_etudiant"
+            app:destination="@id/navigation_etudiant" />
+    </fragment>
     <fragment
         android:id="@+id/studentDetailFragment"
         android:name="com.example.mygestionnairenotes.ui.student.StudentDetailFragment"
         android:label="Etudiant"
-        tools:layout="@layout/fragment_student_detail" />
+
+        tools:layout="@layout/fragment_student_detail" >
+        <action
+            android:id="@+id/action_studentDetailFragment_to_studentAddFragment"
+            app:destination="@id/studentAddFragment" />
+        <action
+            android:id="@+id/action_studentDetailFragment_to_navigation_etudiant"
+            app:destination="@id/navigation_etudiant" />
+    </fragment>
+    <fragment
+        android:id="@+id/teacherAddFragment"
+        android:name="com.example.mygestionnairenotes.ui.teacher.TeacherAddFragment"
+        android:label="Nouvel Enseignant"
+        tools:layout="@layout/fragment_teacher_add">
+        <action
+            android:id="@+id/action_teacherAddFragment_to_navigation_enseignant"
+            app:destination="@id/navigation_enseignant" />
+    </fragment>
+    <fragment
+        android:id="@+id/teacherDetailFragment"
+        android:name="com.example.mygestionnairenotes.ui.teacher.TeacherDetailFragment"
+        android:label="Enseignant"
+        tools:layout="@layout/fragment_teacher_detail">
+        <action
+            android:id="@+id/action_teacherDetailFragment_to_teacherAddFragment"
+            app:destination="@id/teacherAddFragment" />
+        <action
+            android:id="@+id/action_teacherDetailFragment_to_navigation_enseignant"
+            app:destination="@id/navigation_enseignant" />
+    </fragment>
 </navigation>

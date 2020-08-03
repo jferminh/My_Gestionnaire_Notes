@@ -43,40 +43,31 @@ class StudentAddFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        bottomAppBar.setOnMenuItemClickListener {
-            when(it.itemId){
-                R.id.save -> {
-                    viewModel.insertStudent(
-                        StudentEntity(
-                            text_number.text.toString(),
-                            Person(
-                                text_prenom.text.toString(),
-                                text_nom.text.toString(),
-                                text_adresse.text.toString(),
-                                text_commune.text.toString(),
-                                "",
-                                text_codigoPostal.text.toString(),
-                                text_email.text.toString(),
-                                text_telephone.text.toString(),
-                                "Masculin",
-                                ""
+        ext_save_fab.setOnClickListener {
+            viewModel.insertStudent(
+                StudentEntity(
+                    text_number.text.toString(),
+                    Person(
+                        text_prenom.text.toString(),
+                        text_nom.text.toString(),
+                        text_adresse.text.toString(),
+                        text_commune.text.toString(),
+                        "",
+                        text_codigoPostal.text.toString(),
+                        text_email.text.toString(),
+                        text_telephone.text.toString(),
+                        "Masculin",
+                        ""
 
-                            )
-
-                        )
                     )
-                    Toast.makeText(requireContext(), "Etudiant enregistré", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_studentAddFragment_to_navigation_etudiant)
-                    true
-                }
-                R.id.cancel -> {
-                    findNavController().navigate(R.id.action_studentAddFragment_to_navigation_etudiant)
-                    true
-                }
-                else -> false
-            }
+
+                )
+            )
+            Toast.makeText(requireContext(), "Etudiant enregistré", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_studentAddFragment_to_navigation_etudiant)
+            true
         }
+
+
     }
-
-
 }

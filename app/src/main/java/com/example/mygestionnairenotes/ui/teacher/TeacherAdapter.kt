@@ -1,4 +1,4 @@
-package com.example.mygestionnairenotes.ui.student
+package com.example.mygestionnairenotes.ui.teacher
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,42 +8,42 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mygestionnairenotes.R
 import com.example.mygestionnairenotes.base.BaseViewHolder
-import com.example.mygestionnairenotes.data.model.StudentEntity
+import com.example.mygestionnairenotes.data.model.TeacherEntity
 import kotlinx.android.synthetic.main.student_row.view.*
 
-class StudentAdapter(
+
+class TeacherAdapter (
     private val context: Context,
-    private val studentsList: MutableList<StudentEntity>,
-    private val itemClickListener: StudentOnClickListener
+    private val teacherList: MutableList<TeacherEntity>,
+    private val itemClickListener: TeacherOnClickListener
 ) : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
-    interface StudentOnClickListener{
-        fun StudentOnClick(studentEntity: StudentEntity, position: Int)
+    interface TeacherOnClickListener{
+        fun TeacherOnClick(teacherEntity: TeacherEntity, position: Int)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
-        return StudentViewHolder(
+        return TeacherViewHolder(
             LayoutInflater.from(context).inflate(R.layout.student_row, parent, false)
         )
     }
 
     override fun getItemCount(): Int {
-        return studentsList.size
+        return teacherList.size
     }
 
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
         when(holder){
-            is StudentViewHolder -> holder.bind(studentsList[position], position)
+            is TeacherViewHolder -> holder.bind(teacherList[position], position)
         }
     }
 
-    inner class StudentViewHolder(itemView: View) : BaseViewHolder<StudentEntity>(itemView) {
-        override fun bind(item: StudentEntity, position: Int) {
+    inner class TeacherViewHolder(itemView: View) : BaseViewHolder<TeacherEntity>(itemView) {
+        override fun bind(item: TeacherEntity, position: Int) {
             Glide.with(context).load(R.drawable.ic_boy).centerCrop().into(itemView.img_student)
             itemView.txt_lastName.text = item.person?.lastName
             itemView.txt_firstName.text = item.person?.firstName
-            itemView.setOnClickListener { itemClickListener.StudentOnClick(item, position) }
+            itemView.setOnClickListener { itemClickListener.TeacherOnClick(item,position) }
         }
-
     }
 }

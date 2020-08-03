@@ -1,13 +1,28 @@
 package com.example.mygestionnairenotes.ui.teacher
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.*
 import androidx.lifecycle.ViewModel
+import com.example.mygestionnairenotes.data.model.TeacherEntity
+import com.example.mygestionnairenotes.domain.ITeacherUseCase
+import com.example.mygestionnairenotes.vo.Resource
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class TeacherViewModel : ViewModel() {
+class TeacherViewModel(
+    private val repo : ITeacherUseCase
+) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+    val fetchTeacherList = liveData(Dispatchers.IO) {
+        emit(Resource.Loading())
+        try {
+            emit(repo.getTeachersList())
+        }catch (e: Exception){
+            emit(Resource.Failure(e))
+        }
     }
-    val text: LiveData<String> = _text
+    fun insertTeacher(teacherEntity: TeacherEntity){
+        viewModelScope.launch {
+            repo.insertTeacher(teacherEntity)
+        }
+    }
 }

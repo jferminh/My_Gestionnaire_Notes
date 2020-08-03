@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.student.StudentAddFragment">
-
+    tools:context=".ui.teacher.TeacherDetailFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -18,12 +17,12 @@
             android:padding="16dp">
 
             <ImageView
-                android:id="@+id/img_student"
+                android:id="@+id/img_teacher"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:src="@drawable/ic_boy"/>
             <TextView
-                android:id="@+id/lbl_lastName"
+                android:id="@+id/lbl_lastNameTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -33,7 +32,7 @@
                 tools:text="Nom"/>
 
             <TextView
-                android:id="@+id/lbl_number"
+                android:id="@+id/lbl_numberTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
@@ -41,31 +40,31 @@
                 tools:text="Numéro"/>
 
             <TextView
-                android:id="@+id/lbl_phone"
+                android:id="@+id/lbl_phoneTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 tools:text="Téléphone"/>
             <TextView
-                android:id="@+id/lbl_adress"
+                android:id="@+id/lbl_adressTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 tools:text="Adresse"/>
             <TextView
-                android:id="@+id/lbl_city"
+                android:id="@+id/lbl_cityTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 tools:text="Commune"/>
             <TextView
-                android:id="@+id/lbl_zip"
+                android:id="@+id/lbl_zipTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 tools:text="Code Postal"/>
             <TextView
-                android:id="@+id/lbl_email"
+                android:id="@+id/lbl_emailTeacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -75,14 +74,11 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
+        android:id="@+id/bottomAppBarTeacher"
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:menu="@menu/bottom_app_det_stu" />
-
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -39,9 +39,13 @@ class StudentDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 //        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         Glide.with(requireContext()).load(R.drawable.ic_boy).into(img_student)
-        lbl_number.text = student.number
-        lbl_firstname.text = student.person?.firstName
-        lbl_lastname.text = student.person?.lastName
-        lbl_address.text = student.person?.address
+        lbl_number.text = "Num étu: " + student.number
+//        lbl_firstName.text = student.person?.firstName
+        lbl_lastName.text = student.person?.firstName + " " + student.person?.lastName
+        lbl_phone.text =  student.person?.phone
+        lbl_adress.text = student.person?.address
+        lbl_city.text = student.person?.city
+        lbl_zip.text = student.person?.zip
+        lbl_email.text = student.person?.email
     }
 }
