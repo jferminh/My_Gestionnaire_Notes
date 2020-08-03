@@ -13,11 +13,16 @@ import kotlinx.android.synthetic.main.fragment_student_detail.*
 
 class StudentDetailFragment : Fragment() {
     private lateinit var student: StudentEntity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requireArguments().let {
             student = it.getParcelable("student")!!
         }
+//        window.decorView.apply{
+//            system
+//        }
+
     }
 
     override fun onCreateView(
@@ -26,11 +31,14 @@ class StudentDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_student_detail, container, false)
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Glide.with(requireContext()).load(R.drawable.ic_launcher_foreground).centerCrop().into(img_student)
+//        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+        Glide.with(requireContext()).load(R.drawable.ic_boy).into(img_student)
         lbl_number.text = student.number
         lbl_firstname.text = student.person?.firstName
         lbl_lastname.text = student.person?.lastName
